@@ -3,6 +3,19 @@ class ListNode:
         self.value = value
         self.next_node: ListNode = next_node
 
+    # self is in reference to the value not the entire node
+    def get_value(self):
+        # returns the node's data 
+        return self.value
+
+    def get_next(self):
+        # returns the thing pointed at by this node's `next` reference 
+        return self.next_node
+
+    def set_next(self, new_next):
+        # sets this node's `next` reference to `new_next`
+        self.next_node = new_next
+
 
 class LinkedList:
     def __init__(self, head=None):

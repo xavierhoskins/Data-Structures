@@ -10,24 +10,19 @@ return elements in Last In First Out order.
    implementing a Stack?
 """
 
-from sys import path
-
-path.append("../")
-from singly_linked_list.singly_linked_list import LinkedList
-
-
 class Stack:
     def __init__(self):
-        self.__storage = LinkedList()
+        self.__storage = []
 
     def __len__(self):
         return self.size
 
     def push(self, value):
-        self.__storage.add_to_head(value)
+        self.__storage.append(value)
 
     def pop(self):
-        return self.__storage.remove_head()
+        if len(self.__storage):
+            return self.__storage.pop()
 
     @property
     def size(self) -> int:
